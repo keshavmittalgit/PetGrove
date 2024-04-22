@@ -19,7 +19,7 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
     if (userEmail) {
       // Delete uploaded file if user already exists
       const filename = req.file.filename;
-      const filepath = `uploads/${filename}`;
+      const filepath = `backend/uploads/${filename}`;
       fs.unlink(filepath, (err) => {
         if (err) {
           console.log(err);
